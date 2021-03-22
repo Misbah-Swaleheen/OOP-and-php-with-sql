@@ -19,7 +19,7 @@ class car {
 }
 
 $myCar = new car;
-$myCar -> $anme = 'Toyota Corolla';
+$myCar -> name = 'Toyota Corolla';
 $myCar-> drive();
 $myCar-> breaks();
 

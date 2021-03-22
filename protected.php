@@ -20,6 +20,17 @@
             echo $this->atmpin;
         
         }
+
+        public function atmpin()
+        {
+            # code...
+            return $this->atmpin;
+        }
+
+        // public function FunctionName(Type $var = null)
+        // {
+        //     # code...
+        // }
      
     }
     class child extends father{
@@ -29,8 +40,15 @@
             br();
             echo $this->email;
             br();
-            //echo $this->atmpin;
+            echo $this->atmpin();
+            br();
         
+        }
+
+        public function getemail()
+        {
+            # code...
+            return $this->email;
         }
         public function __destruct()
         {
@@ -39,16 +57,18 @@
         }
         
     }
-    $f = new child;
+   
   
 
-    echo ". . . .  .mazhar"
+    echo ". . . .  .mazhar<br>";
     // hr();
 
-    // $c = new child;
-    // echo $c->name;
-    // br();
-    // echo $c->email;
-    // br();
-    // echo $c->atmpin;
+    
+
+    $c = new child;
+    echo $c->name;
+    br();
+    echo $c->getemail();
+    br();
+    echo $c->atmpin();
 ?>
