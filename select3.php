@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+     <div class="container">
+
+<?php 
+//  $server = "localhost";
+//  $database = "online shopping center";
+//  $user = "root";
+//  $password = "";
+
+ $conn = new mysqli('localhost','root','','online shopping center');
+
+ if ($conn->connect_error ) {
+     # code...
+     echo "stop <br>";
+ }
+ else {
+     
+    echo "run <br>";
+ }
+
+ $query = "SELECT * FROM categories";
+
+ $result = $conn->query($query);
+
+ ?>
+ <table class="table table-bordered table-striped table-dark table-hover table-responsive-sm ">
+<thead class="">
+    <th>ID</th>
+    <th> Category Name</th>
+
+    </thead>
+<tbody>
+ <?php  
+
+while($row = $result->fetch_assoc()){
+    ?>
+<tr>
+<td>
+<?php 
+        echo $row['Id'];?>
+
+</td>
+<td>
+<?php  
+      echo $row['Category_name'];
+?>
+</td>
+</tr>
+  <?php 
+
+}
+ 
+?>
+</tbody>
+ </table>
+
+     </div>
+
+</body>
+</html>
